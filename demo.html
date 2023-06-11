@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .para{
+            width: 100%;
+            height: 50%;
+            font-family: math;
+            font-size: 16;
+            color: rgb(0, 0, 0);
+            margin: 10px;
+            padding: 10px;
+        }
+        #btn{
+            color: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            width: 150px;
+            height: 30px;
+            border: none;
+            margin: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="para1" class="para">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius inventore laborum pariatur alias ratione facere provident repellat quis incidunt numquam perferendis blanditiis, beatae reprehenderit ullam architecto fugiat qui eum? Maiores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio, libero optio dignissimos accusamus quis vero iste inventore? Ducimus eveniet cupiditate corrupti dolor voluptas eos error iste aperiam molestias iure.
+        </p>
+        <p id="para2" class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam mollitia sit odio dolorum earum reprehenderit sunt quibusdam cum, 
+            ipsam corrupti, officia ut illum inventore vero recusandae quisquam? Quidem, consequatur ducimus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque porro voluptas dolorem enim minima. Perferendis, magni similique! Veritatis assumenda ipsa aspernatur eveniet autem nesciunt omnis, unde in nam inventore blanditiis!
+        </p>
+        <p id="para3" class="para">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem nam accusamus qui incidunt sapiente recusandae dignissimos quisquam animi error suscipit hic ea provident culpa doloremque quidem, illum maiores quas sequi!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ullam eaque tempore, vel, ipsum consectetur debitis velit enim commodi modi magnam odio repudiandae laboriosam officiis provident quod dolor ab culpa.
+        </p>
+        <button id="btn" onclick="toggleBtn()">Dark || Light</button>
+
+        <script>
+            const mainBody  = document.body;
+            const btn = document.getElementById('btn');
+            const para1 = document.getElementById('para1');
+            const para2 = document.getElementById('para2');
+            const para3 = document.getElementById('para3');
+            var cond = true;
+            const array = ['balck','green','yellow','red','aqua','blue','grey','pink','orange']
+            function toggleBtn(){
+                if(cond){
+                    para1.style.color = "white";
+                    para2.style.color = "white";
+                    para3.style.color = "white";
+                    mainBody.style.background = array[Math.floor(Math.random() * 10)];
+                    btn.style.color = "white";
+                    btn.style.background = array[Math.floor(Math.random() * 10)];;
+                    btn.style.border = "1px solid white";
+
+                    cond = false;
+                }else{
+                    mainBody.style.background = array[Math.floor(Math.random() * 10)];
+                    btn.style.color = "black";
+                    btn.style.background = array[Math.floor(Math.random() * 10)];;
+                    btn.style.border = "1px solid black";
+                    para1.style.color = "black";
+                    para2.style.color = "black";
+                    para3.style.color = "black";
+                    cond  = true;
+                }
+            }
+            
+            
+            
+
+        </script>
+    </div>
+</body>
+</html>
